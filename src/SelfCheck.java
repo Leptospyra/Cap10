@@ -1,16 +1,103 @@
+import java.io.Console;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Scanner;
 
 public class SelfCheck {
     public static void main(String[] args){
         ArrayList<String> elementos = new ArrayList<String>();
-        Exercicio02(elementos);
-        Exercicio03(elementos);
-        Exercicio04(elementos);
-        Exercicio05(elementos);
-        Exercicio06(elementos);
-        System.out.println(maxLength(elementos)); //Exercicio 07
-        Exercicio08(elementos);
+        //Exercicio02(elementos);
+        //Exercicio03(elementos);
+        //Exercicio04(elementos);
+        //Exercicio05(elementos);
+        //Exercicio06(elementos);
+        //System.out.println(maxLength(elementos)); //Exercicio 07
+        //Exercicio08(elementos);
+        //Exercicio09(elementos);
+        //Exercicio10(elementos);
+        //Exercicio11(elementos);
+        //Exercicio17();
+        Exercicio18();
+
+    }
+
+    private static void Exercicio18() {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Type a message to sort: ");
+        String frase = s.nextLine();
+
+        ArrayList<String> words = new ArrayList<String>();
+        Scanner lineScan = new Scanner(frase);
+        while (lineScan.hasNext()){
+            words.add(lineScan.next());
+        }
+
+        System.out.print("Your message sorted: ");
+        Collections.sort(words);
+        for (String word: words){
+            System.out.print(word+" ");
+        }
+    }
+
+    //
+    private static void Exercicio17() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Type a name: ");
+        String name01 = s.nextLine();
+        System.out.println("Type a name: ");
+        String name02 = s.nextLine();
+        int resultado = name01.compareTo(name02);
+
+        if (resultado < 0){
+            System.out.printf("%s goes before %s", name01, name02);
+        } else {
+            System.out.printf("%s goes before %s", name02, name01);
+        }
+
+    }
+
+    private static void Exercicio11(ArrayList<String> elementos) {
+        for (String s : elementos) {
+            System.out.println(s);
+            if (s.equals("hello")) {
+                elementos.add("goodbye");
+            }
+        }
+    }
+
+    //write a for-each loop that prints the uppercase version of each String in the list on its own line.
+    private static void Exercicio10(ArrayList<String> elementos) {
+        elementos.add("It");
+        elementos.add("was");
+        elementos.add("a");
+        elementos.add("stormy");
+        elementos.add("night");
+        elementos.add(3,"dark");
+        elementos.add(4,"and");
+        Collections.sort(elementos);
+
+        for (String s : elementos) {
+            System.out.println(s.toString().toUpperCase());
+        }
+    }
+
+    //Given the ArrayList from problem 3, write code to print out the index at which your list contains the value
+//“stormy” and the index at which it contains “dark”. Do not use a loop.
+    private static void Exercicio09(ArrayList<String> elementos) {
+        elementos.add("It");
+        elementos.add("was");
+        elementos.add("a");
+        elementos.add("stormy");
+        elementos.add("night");
+        elementos.add(3,"dark");
+        elementos.add(4,"and");
+
+        System.out.println("Index of Stormy: "+elementos.indexOf("stormy"));
+        System.out.println("Index of dark: "+elementos.indexOf("dark"));
+
+
     }
 
     private static void Exercicio08(ArrayList<String> elementos) {
